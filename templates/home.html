@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">Simon Alex ATWIINE</h2>
+            </div>
+            <img src="{% static 'img/SimonAlex.png' %}" class="card-img-top" alt="Profile Pic">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase">Personal Data</h5>
+              <hr>
+              <table class="table table-striped">
+                  {% for biodata in object_list %}
+                  <tr>
+                      <td>
+                          <p class="card-text"><strong>DATE OF BIRTH</strong>: {{biodata.dob}}</p>
+                      </td>
+                      <td>
+                          <p></p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <p class="card-text"><strong>ADDRESS</strong>: {{biodata.address}}</p>
+                      </td>
+                      <td>
+                          <p></p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <p class="card-text"><strong>PHONE</strong>: {{biodata.phone}}</p>
+                      </td>
+                      <td>
+                          <p></p>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <p class="card-text"><strong>EMAIL</strong>: {{biodata.email}}</p>
+                      </td>
+                      <td>
+                          <p></p>
+                      </td>
+                  </tr>
+                  {% endfor %}
+              </table>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+</div>
+{% endblock content %}
